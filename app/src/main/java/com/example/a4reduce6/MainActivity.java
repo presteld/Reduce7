@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             int iZaehler = Integer.parseInt(sZaehler);
             int iNenner = Integer.parseInt(sNenner);
 
+            if (iZaehler == iNenner) throw new ReduceException("Die Zahlen sind identisch", iZaehler, iNenner);
+
 
             //if (iNenner * iZaehler != 0) {    //Euklidischer Algorithmus zur Berechnung des ggT
                 int iRest, iGGT = Math.abs(iZaehler), iDivisor = Math.abs(iNenner);
@@ -57,7 +59,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
            // }
 
-        } catch (Exception e) {    // Divide by Zero wird nicht durch NumberFormatException abgefangen
+        } catch (ReduceException e) {    // Divide by Zero wird nicht durch NumberFormatException abgefangen
+            //throw new RuntimeException(e);
+            AlertDialog alertDialog = new AlertDialog.Builder(this).create();  //Factory Methode
+            alertDialog.setTitle("Konfigurationsfehler");
+            alertDialog.setMessage("Bitte korrekte Zahlen eingeben\nFehler: "+ e.getMessage()
+            + "\nZaehler: " + e.getiZaehler() + "\nNenner: " + e.getiNenner());
+            alertDialog.show();
+        }
+
+        catch (Exception e) {    // Divide by Zero wird nicht durch NumberFormatException abgefangen
             //throw new RuntimeException(e);
             AlertDialog alertDialog = new AlertDialog.Builder(this).create();  //Factory Methode
             alertDialog.setTitle("Eingabefehler");

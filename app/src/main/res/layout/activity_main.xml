@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#82B1FF"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etZaehler"
+        android:layout_width="306dp"
+        android:layout_height="77dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="#FFE57F"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Bitte Zahler eingeben"
+        android:inputType="numberSigned"
+        android:text="25"
+        android:textColor="#8C98FF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="254dp"
+        android:layout_height="45dp"
+        android:background="#8C9EFF"
+        android:gravity="center"
+        android:text="----------------------------------------------------------" />
+
+
+    <!--  Edittext +id -> er nimmt die nächste vorkompilieerte Referenz (Ganzahl-Adresse)
+    editbox_background kommmt ich von R.Drawable, sondern vom installierten SDK -->
+    <EditText
+        android:id="@+id/etNenner"
+        android:layout_width="287dp"
+        android:layout_height="69dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="#FFE57F"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Bitte Zahler eingeben"
+        android:inputType="number"
+        android:text="15"
+        android:textColor="#8C98FF"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btnReduce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#E01F1F"
+        android:text="Kürze"
+        android:textColor="#021EFF"
+        android:textSize="34sp" />
+
+</LinearLayout>
